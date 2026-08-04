@@ -622,7 +622,7 @@ display:none;
     position:absolute;
 
     left:50%;
-    top:58%;
+    top:55%;
 
     transform:translate(-50%,-50%);
 
@@ -663,8 +663,8 @@ display:none;
 .poster{
     position:relative;
     width:70vw;        /* Increased from 48vw */
-    max-width:1000px;  /* Increased from 720px */
-    min-width:800px;   /* Increased from 420px */
+    max-width:1150px;  /* Increased from 720px */
+    min-width:500px;   /* Increased from 420px */
     overflow:hidden;
     border-radius:24px;
     border:5px solid var(--gold);
@@ -901,10 +901,9 @@ height:500px;
 }
 
 /*==================================================
-    SCENE 3 : WELCOME MESSAGE / CLOSING TEXT
-    Typewriter greeting, "Happy Women's Day" title
-    and the closing Bible verse, stacked at the
-    bottom of the screen.
+    SCENE 3 : WELCOME MESSAGE
+    Typewriter greeting, stacked near the bottom of
+    the screen.
 ==================================================*/
 
 .message-section{
@@ -972,6 +971,15 @@ height:500px;
     width:0;
 
     border-right:4px solid var(--gold);
+	bottom:50px;
+    left:0;
+    width:100%;
+    text-align:center;
+
+    font-size:3rem;
+    font-weight:700;
+    letter-spacing:3px;
+
 
 }
 
@@ -986,119 +994,7 @@ height:500px;
 }
 
 /*==================================================
-    "HAPPY WOMEN'S DAY" TITLE
-==================================================*/
-
-.happy-title{
-
-    margin-top:40px;
-
-    opacity:0;
-
-    font-size:4rem;
-
-    font-weight:900;
-
-    text-transform:uppercase;
-
-    letter-spacing:8px;
-
-    background:
-
-    linear-gradient(
-
-        90deg,
-
-        #ffffff,
-
-        #FFD700,
-
-        #ffffff,
-
-        #FFD700,
-
-        #ffffff);
-
-    background-size:300%;
-
-    -webkit-background-clip:text;
-
-    -webkit-text-fill-color:transparent;
-
-    text-shadow:
-
-        0 0 20px rgba(255,215,0,.55),
-
-        0 0 45px rgba(255,215,0,.30);
-
-}
-
-.happy-show{
-
-    animation:
-
-        happyReveal 2s ease forwards,
-
-        happyShimmer 5s linear infinite,
-
-        happyPulse 2.5s ease-in-out infinite;
-
-}
-
-/*==================================================
-    BIBLE VERSE
-    Increased from 1.2rem / 1.1rem and given a
-    little more top margin so it never crowds the
-    "Happy Women's Day" title above it.
-==================================================*/
-
-.bible-verse{
-
-    margin-top:34px;
-
-    opacity:0;
-
-    max-width:900px;
-
-    margin-left:auto;
-    margin-right:auto;
-
-    font-size:1.4rem;
-
-    line-height:1.8;
-
-    color:#FFF4C7;
-
-    font-style:italic;
-
-    letter-spacing:1px;
-
-}
-
-.verse-show{
-
-    animation:
-
-    verseFade 2s ease forwards;
-
-}
-
-.bible-verse strong{
-
-    display:block;
-
-    margin-top:12px;
-
-    color:var(--gold);
-
-    font-size:1.3rem;
-
-    letter-spacing:2px;
-
-}
-
-/*==================================================
-    MESSAGE / TYPEWRITER / HAPPY / VERSE KEYFRAMES
+    MESSAGE / TYPEWRITER KEYFRAMES
 ==================================================*/
 
 @keyframes messageFade{
@@ -1116,26 +1012,6 @@ to{width:100%;}
 50%{border-color:transparent;}
 }
 
-@keyframes happyReveal{
-0%{opacity:0;transform:scale(.55) rotate(-8deg);filter:blur(12px);}
-100%{opacity:1;transform:scale(1) rotate(0deg);filter:blur(0);}
-}
-
-@keyframes happyShimmer{
-0%{background-position:-300%;}
-100%{background-position:300%;}
-}
-
-@keyframes happyPulse{
-0%,100%{transform:scale(1);}
-50%{transform:scale(1.05);}
-}
-
-@keyframes verseFade{
-0%{opacity:0;transform:translateY(25px);}
-100%{opacity:1;transform:translateY(0);}
-}
-
 /*==================================================
     RESPONSIVE (CLOSING MESSAGE)
 ==================================================*/
@@ -1149,16 +1025,6 @@ bottom:3%;
 .welcome-message{
 font-size:1.3rem;
 letter-spacing:1px;
-}
-
-.happy-title{
-font-size:2.3rem;
-letter-spacing:3px;
-}
-
-.bible-verse{
-font-size:1.8rem;
-padding:0 20px;
 }
 
 .typewriter{
@@ -1314,8 +1180,10 @@ animation-delay:7s;
 }
 
 /*==================================================
-    FOOTER
-    Increased from 1.5rem for projector visibility.
+    FOOTER (SCRIPTWRITER CREDIT)
+    Enlarged and moved here, at the bottom of the
+    screen. Replace the placeholder text in the
+    HTML body below with the actual credit.
 ==================================================*/
 
 .footer{
@@ -1325,19 +1193,29 @@ animation-delay:7s;
     width:100%;
     text-align:center;
 
-    font-size:1.7rem;
-    font-weight:600;
+    font-size:2.6rem;
+    font-weight:700;
     letter-spacing:3px;
 
-    color:#FFD700;
+    color:white;
 
     text-shadow:
         0 0 8px rgba(255,215,0,.6),
         0 0 18px rgba(255,215,0,.4);
 
-    opacity:.9;
+    opacity:.95;
 
     z-index:999;
+}
+
+@media (max-width:900px){
+
+.footer{
+font-size:1.4rem;
+letter-spacing:1.5px;
+padding:0 15px;
+}
+
 }
 
 /*==================================================
@@ -1432,9 +1310,8 @@ animation-delay:7s;
             THE PENTECOSTAL CHURCH OF GOD
         </div>
 
-        <div class="church-motto">
-            We exist to be heavenly bound, edify the church and evangelize the world.
-        </div>
+       
+		
 
     </div>
 
@@ -1489,35 +1366,27 @@ animation-delay:7s;
 
 </div>
 
-<!-- Scene 3: typed welcome line, "Happy Women's Day" and closing Bible verse -->
+<!-- Scene 3: typed welcome line -->
 <div class="message-section">
 
     <div id="welcomeMessage" class="welcome-message">
+	
 
         <div id="typingMessage" class="typewriter">
 
-            WE ARE GLAD THAT YOU ARE GATHERED HERE WITH US TODAY
+             WE ARE GLAD THAT YOU ARE GATHERED HERE WITH US TODAY
 
         </div>
 
     </div>
 
-    <div id="happyTitle" class="happy-title">
+</div>
 
-        HAPPY WOMEN'S DAY
+<!-- Footer: scriptwriter credit (placeholder — replace with the real name) -->
+<div class="footer">
+💮❤️🌻💌💃🥹🤍💗💖💝💙🖤💛
 
-    </div>
-
-    <div id="bibleVerse" class="bible-verse">
-
-        "She is clothed with strength and dignity, and she laughs without fear of the future."
-
-        <br><br>
-
-        <strong>Proverbs 31:25</strong>
-
-    </div>
-
+    
 </div>
 
 <script>
@@ -1538,8 +1407,6 @@ const subtitle = document.getElementById("subTitle");
 const poster = document.getElementById("posterContainer");
 const message = document.getElementById("welcomeMessage");
 const typing = document.getElementById("typingMessage");
-const happy = document.getElementById("happyTitle");
-const verse = document.getElementById("bibleVerse");
 const confetti = document.getElementById("confetti");
 
 /* --- Timing/behaviour settings for the whole sequence --- */
@@ -1555,8 +1422,6 @@ const SETTINGS = {
     posterDuration:3500,
 
     messageDuration:5000,
-
-    happyDuration:2500,
 
     autoRestart:true,
 
@@ -1597,8 +1462,6 @@ function resetPresentation(){
     poster.className="poster-container";
     message.className="welcome-message";
     typing.className="typewriter";
-    happy.className="happy-title";
-    verse.className="bible-verse";
     confetti.innerHTML="";
 
 }
@@ -1694,47 +1557,16 @@ function showPoster(){
 
 }
 
-/* Scene 4: Typewriter welcome message plays */
+/* Scene 4: Typewriter welcome message plays, then confetti/sparkles
+   celebrate before the loop restarts */
 
 function showMessage(){
 
     message.classList.add("message-show");
     typing.classList.add("play");
 
-    wait(
-
-        showHappyTitle,
-
-        SETTINGS.messageDuration
-
-    );
-
-}
-
-/* Scene 5: "Happy Women's Day" reveal + confetti + sparkles */
-
-function showHappyTitle(){
-
-    happy.classList.add("happy-show");
-
     launchConfetti();
     sparkleBurst();
-
-    wait(
-
-        showBibleVerse,
-
-        SETTINGS.happyDuration
-
-    );
-
-}
-
-/* Scene 6: Closing Bible verse, then schedule a restart */
-
-function showBibleVerse(){
-
-    verse.classList.add("verse-show");
 
     if(SETTINGS.autoRestart){
 
@@ -1742,7 +1574,7 @@ function showBibleVerse(){
 
             restartPresentation,
 
-            SETTINGS.restartDelay
+            SETTINGS.messageDuration + SETTINGS.restartDelay
 
         );
 
@@ -2039,7 +1871,7 @@ function preloadImages(){
 }
 
 /* Keyboard shortcuts for manual control during setup/testing:
-   1-6 jump to a scene, R restarts, F toggles fullscreen,
+   1-4 jump to a scene, R restarts, F toggles fullscreen,
    C fires confetti, S fires a sparkle burst, Esc exits fullscreen */
 
 document.addEventListener("keydown", function(e){
@@ -2060,14 +1892,6 @@ document.addEventListener("keydown", function(e){
 
         case "4":
             showMessage();
-            break;
-
-        case "5":
-            showHappyTitle();
-            break;
-
-        case "6":
-            showBibleVerse();
             break;
 
         case "r":
