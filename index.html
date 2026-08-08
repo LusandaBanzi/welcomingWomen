@@ -31,89 +31,75 @@ body{
     position:relative;
 }
 
-/*==================================================
-    COLOR / THEME VARIABLES
-    Central place to tweak the palette used
-    throughout the presentation.
-==================================================*/
+/* ==================================================
+   CHAMPAGNE / ANTIQUE GOLD THEME
+================================================== */
 
 :root{
 
-    --gold:#FFD700;
-    --blue:#0A2F73;
-    --pink:#ff69b4;
-    --white:#ffffff;
-    --dark:#02060f;
+    --gold:#D9B15F;
+    --blue:#5A3412;
+    --pink:#C99A3D;
+    --white:#FFF8E8;
+    --dark:#2B1608;
+
+    --champagne:#E8C98D;
+    --antique-gold:#A9782A;
+    --bronze:#8A5A20;
+    --ivory:#F6E8C8;
 
     --shadow:
-    0 0 15px rgba(255,215,0,.45);
-
+        0 0 15px rgba(232,201,141,.45);
 }
 
-/*==================================================
-    BODY BACKGROUND
-    Slow-shifting diagonal gradient that gives the
-    stage a "moving light" feel behind everything.
-==================================================*/
+/* ==================================================
+   BODY BACKGROUND
+================================================== */
 
 body{
 
     background:
     linear-gradient(
-    -45deg,
-    #02060f,
-    #081b36,
-    #10345f,
-    #b8860b,
-    #10345f,
-    #081b36,
-    #02060f);
+        -45deg,
+        #2B1608,
+        #42240D,
+        #5A3412,
+        #8A5A20,
+        #A9782A,
+        #C99A3D,
+        #E8C98D,
+        #5A3412,
+        #2B1608
+    );
 
     background-size:500% 500%;
 
     animation:
-    gradientMove 20s linear infinite;
-
+        gradientMove 20s linear infinite;
 }
 
-/*==================================================
-    MAIN GLOW
-    Big soft radial glow centered on the screen,
-    pulsing gently behind the content.
-==================================================*/
+/* ==================================================
+   MAIN GLOW
+================================================== */
 
 .background-glow{
 
-    position:fixed;
-
-    left:50%;
-    top:50%;
-
-    transform:translate(-50%,-50%);
-
-    width:70vw;
-    height:70vw;
-
-    border-radius:50%;
-
     background:
-    radial-gradient(circle,
-
-    rgba(255,215,0,.30),
-
-    rgba(35,70,120,.18),
-
-    transparent 72%);
+    radial-gradient(
+        circle,
+        rgba(232,201,141,.35),
+        rgba(201,154,61,.22),
+        rgba(138,90,32,.16),
+        transparent 72%
+    );
 
     filter:blur(18px);
 
     animation:
-    glowPulse 8s ease-in-out infinite;
+        glowPulse 8s ease-in-out infinite;
 
     z-index:0;
-
 }
-
 /*==================================================
     FLOATING ORBS
     Three soft colored blobs drifting slowly to add
@@ -136,55 +122,47 @@ body{
 
 }
 
+/* ==================================================
+   FLOATING ORBS
+================================================== */
+
 .orb1{
 
-    width:250px;
-    height:250px;
-
-    left:6%;
-    top:14%;
-
     background:
-
-    radial-gradient(circle,#4da3ff,transparent 70%);
+    radial-gradient(
+        circle,
+        #E8C98D,
+        transparent 70%
+    );
 
     animation:
-    orbFloat1 14s ease-in-out infinite;
-
+        orbFloat1 14s ease-in-out infinite;
 }
 
 .orb2{
 
-    width:320px;
-    height:320px;
-
-    right:8%;
-    bottom:8%;
-
     background:
-
-    radial-gradient(circle,#FFD700,transparent 70%);
+    radial-gradient(
+        circle,
+        #C99A3D,
+        transparent 70%
+    );
 
     animation:
-    orbFloat2 16s ease-in-out infinite;
-
+        orbFloat2 16s ease-in-out infinite;
 }
 
 .orb3{
 
-    width:180px;
-    height:180px;
-
-    right:25%;
-    top:18%;
-
     background:
-
-    radial-gradient(circle,#153c72,transparent 70%);
+    radial-gradient(
+        circle,
+        #8A5A20,
+        transparent 70%
+    );
 
     animation:
-    orbFloat3 12s ease-in-out infinite;
-
+        orbFloat3 12s ease-in-out infinite;
 }
 
 /*==================================================
@@ -329,6 +307,10 @@ body{
 
 }
 
+/* ==================================================
+   CHURCH TITLE
+================================================== */
+
 .church-title{
 
     font-size:5.5rem;
@@ -339,15 +321,13 @@ body{
 
     text-transform:uppercase;
 
-    color:#0b2e75;
+    color:#5A3412;
 
-    -webkit-text-stroke:1px var(--gold);
+    -webkit-text-stroke:1px #D9B15F;
 
     text-shadow:
-
-    0 0 10px rgba(255,215,0,.4),
-
-    0 0 25px rgba(255,215,0,.3);
+        0 0 10px rgba(232,201,141,.55),
+        0 0 25px rgba(201,154,61,.35);
 
 }
 
@@ -360,42 +340,30 @@ body{
 
     letter-spacing:1px;
 
-    color:white;
+    color:#FFF8E8;
 
     opacity:.95;
 
 }
 
+/* ==================================================
+   HEADER LINE
+================================================== */
+
 .header-line{
 
-    position:absolute;
-
-    bottom:-10px;
-
-    left:0;
-
-    width:0;
-
-    height:3px;
-
     background:
-
     linear-gradient(
+        90deg,
+        transparent,
+        #D9B15F,
+        #C99A3D,
+        #D9B15F,
+        transparent
+    );
 
-    90deg,
-
-    transparent,
-
-    var(--gold),
-
-    transparent);
-
-    animation:
-
-    lineGrow 2s ease forwards;
-
-    animation-delay:1s;
-
+    box-shadow:
+        0 0 15px rgba(232,201,141,.45);
 }
 
 /*==================================================
